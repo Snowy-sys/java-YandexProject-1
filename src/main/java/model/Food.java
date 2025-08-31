@@ -10,7 +10,7 @@ public abstract class Food implements Discountable{
    protected boolean isVegetarian;           /** флаг, который показывает, вегетарианский ли продукт */
 
    /** Конструктор абстрактного класса с инициализацией основных полей */
-    public Food(int amount, double price, boolean isVegetarian) {
+    protected Food(int amount, double price, boolean isVegetarian) {
         this.amount = amount;
         this.price = price;
         this.isVegetarian = isVegetarian;

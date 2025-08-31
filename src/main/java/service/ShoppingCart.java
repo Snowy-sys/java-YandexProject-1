@@ -16,8 +16,8 @@ public class ShoppingCart {
     public double getTotalPriceWithoutDiscount() {
 
         double sum = 0;
-        for (int i = 0; i < items.length; i++) {
-            sum += items[i].getTotalPrice();
+        for (Food item : items) {
+            sum += item.getTotalPrice();
         }
         return sum;
     }
@@ -26,21 +26,21 @@ public class ShoppingCart {
     public double getTotalPriceWithDiscount() {
 
         double sum = 0;
-        for (int i = 0; i < items.length; i++) {
-            sum += items[i].getTotalDiscount();
+        for (Food item : items) {
+            sum += item.getTotalDiscount();
         }
         return sum;
     }
 
     /** Получить общую сумму всех вегетарианских продуктов в корзине без скидки */
     public double getTotalPriceVegetarian() {
-        double sum = 0;
-            for (int i = 0; i < items.length; i++) {
-                if (items[i].isVegetarian()) {
-                    sum += items[i].getTotalPrice();
-                }
-            }
-            return sum;
-    }
 
+        double sum = 0;
+        for (Food item : items) {
+            if (item.isVegetarian()) {
+                sum += item.getTotalPrice();
+            }
+        }
+        return sum;
+    }
 }
